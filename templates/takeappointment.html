@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+
+{% block title %}Form |{% endblock title %}
+{% block body %}
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+           /* background-image: url(https://c8.alamy.com/comp/2BB5GM3/doctor-appointment-medical-test-forms-documents-and-medical-masks-surgical-protection-mask-on-blue-background-concept-medicine-health-care-2BB5GM3.jpg);*/
+           background-image: url(https://stormotion.io/blog/content/images/2017/07/doctor-appointment-app-cover-1.jpg);
+            width: auto;
+            height: auto;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        .container {
+            width: auto;
+            height: auto;
+            background-color: lightslategray;
+            align-self: center;
+            opacity: 0.9;
+            border-radius: 3%;
+
+        }
+
+        h1 {
+            color: black;
+            text-align: center;
+        }
+        button{
+            margin-top: 0;
+            margin-left: 0;
+            margin-bottom:0 ;
+            margin-right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <hr>
+    <br>
+    <br>
+    <br>
+
+    <H1 style="font-size: 5rem; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Appointment Request</H1>
+    <br>
+    <div class="container">
+        <br>
+        <h4 style="text-align: center;"><strong>Personal Details:</strong></h4>
+        <br>
+        <form method="post" action="">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="col">
+                    <label for="fname"> <b>First Name</b></label>
+                    {{form.f_name}}
+                </div>
+                <div class="col">
+                    <label for="lname"> <b> Last Name </b></label>
+                    {{form.l_name}}
+                </div>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="col">
+                    <label for="inputNumber"> <b>Phone 1</b></label>
+                    {{form.phone1}}
+                </div>
+                <div class="col">
+                    <label for="inputNumber"> <b> Phone 2 </b></label>
+                    {{form.phone2}}
+                </div>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="inputAddress"><b> Address</b></label>
+                        {{form.add}}
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-row">
+                <div class="col-7">
+                    {{form.city}}
+                </div>
+                <div class="col">
+                    {{form.state}}
+                </div>
+                <div class="col">
+                    {{form.pincode}}
+                </div>
+            </div>
+            <br>
+             <div class="form-row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1"><b>Email address</b></label>
+                        {{form.email}}
+                    </div>
+                </div>
+            </div>
+            <br>
+    </div>
+    <div class="container">
+            <br>
+            <h4 style="text-align: center;"><strong>Doctor Details:</strong></h4>
+            <br>
+            <div class="form-row">
+                <div class="col-4">
+                    <label for="day"><b>Name:</b></label>
+                    {{doctor.name}}
+                </div>
+                <div class="col-4">
+                    <label for="time"><b>Address:</b></label>
+                    {{doctor.add}}
+                </div>
+                  <div class="col-4">
+                    <label for="time"><b>Fees:</b></label>
+                    {{doctor.price}}
+                </div>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="col-6">
+                    <label for="day"><b> Choose day</b></label>
+                    {{form.day}}
+                </div>
+                <div class="col-6">
+                    <label for="time"><b> Choose Time-slot</b></label>
+                    {{form.timeslot}}
+                </div>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="col">
+                    <div class="form-group form-group-lg">
+                        <label for="inputlg"><b> Symtoms</b></label>
+                        {{form.symptom}}
+                    </div>
+                </div>
+            </div>
+           
+            <button type="submit" class="btn btn-primary">Submit</button>
+            {{form.errors}}
+        </form>
+    </div>
+    <br>
+    <br>
+
+{% endblock body %}
+

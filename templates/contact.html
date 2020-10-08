@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Contact Us |{% endblock title %}
+{% block body %}
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+      .img-fluid{
+         width: auto;
+         height: auto;
+         
+      }
+    </style>
+
+     <br>
+    <br>
+    <br>
+   <h1 style="text-align: center;">  Quick Contact </h1>
+  
+    <div class="container-fluid" style="padding: 2rem ;">
+     <div class="row no glutters">
+       <div class="col-md-6">
+         <img src="https://d16pnh712pyiwa.cloudfront.net/wp-content/uploads/2019/07/support.png" alt="no image" class="img-fluid">
+         <br>
+         <br>
+         <p>
+           For any ambulance services or first aid suport call us at +91397534495. Our services are open 24/7 
+         </p>
+       </div>
+       <div class="col-md-6">
+        <form method="post" action"/">
+          {%csrf_token%}
+          <div class="form-group">
+            <label for="inputName" > Name </label>
+            {{form.name}}
+          </div>
+          <div class="form-group">
+            <label for="inputEmail" >Email address</label>
+            {{form.email}}
+           
+          </div>
+          <div class="form-group">
+            <label for="inputNumber" > Phone Number  </label>
+            {{form.phone}}
+          </div>
+          <div class="form-group">
+            <label for="inputMessage" > Comments  </label>
+            {{form.mess}} 
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+       </div>
+     </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="container" style="text-align: center;">
+      <h2> Meet Our Team </h2>
+      <br>
+     <div class="row">
+         <div class="col-md-4">
+            <div class="card" style="width: 400px">
+              <img class="card-img-top" src="https://media-exp1.licdn.com/dms/image/C4D03AQErNMeslpW9VA/profile-displayphoto-shrink_200_200/0?e=1605139200&v=beta&t=2F82dtqfUPwrKFi8VCFXRGQAuPZ-P3om5seqENo09zQ" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title"> Garv Oberoi</h5>
+                <p class="card-text"> erhfasjkdfhjsdhfklasdhfklasdhfklasfklhsdkl </p>
+                <a href="#" class="btn btn-primary"> More About</a>
+              </div>
+            </div>
+         </div>
+         <div class="col-md-4">
+          <div class="card" style="width: 400px">
+              <img class="card-img-top" src="https://media-exp1.licdn.com/dms/image/C4D03AQGgTB28-AY7ew/profile-displayphoto-shrink_200_200/0?e=1605139200&v=beta&t=5fzXbt1DuV5II38VHVmYHf0M2cWiDgwjfw3cnLAyhMc" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title"> Kanav Khera</h5>
+                <p class="card-text"> ksjfhasdhfadhglfkadhfgklhadfklghadkl </p>
+                <a href="#" class="btn btn-primary"> More About</a>
+              </div>
+            </div>
+         </div>
+
+     </div>  
+     </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   
+{% endblock body %}
+

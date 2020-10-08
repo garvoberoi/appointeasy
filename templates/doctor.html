@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% block title %}Doctors |{% endblock title %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+{% block body %}
+<style>
+  .card {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    text-align: center;
+    padding: 1rem 1rem;
+    background-color:rgb(228, 255, 255);
+  }
+
+  .button {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    color: black;
+  }
+
+
+  .card:hover {
+    opacity: 1;
+    background-color: darkgray;
+  }
+
+  .card:hover .button {
+    opacity: 1;
+    background-color: black;
+  }
+
+  .container {
+    justify-content: center;
+  }
+  body{
+    background-color: aliceblue;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://qtxasset.com/styles/breakpoint_xl_880px_w/s3/FierceHealthcare-1505998764/doc.jpg/doc.jpg?FAoD.W.A_SgPdJ7H2x2tvjyoSPWLkINI&itok=tMdZSGPJ");
+    /*background-image: url("https://qtxasset.com/styles/breakpoint_xl_880px_w/s3/FierceHealthcare-1505998764/doc.jpg/doc.jpg?FAoD.W.A_SgPdJ7H2x2tvjyoSPWLkINI&itok=tMdZSGPJ");*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  
+  }
+
+  .name {
+    text-align: center;
+  }
+  </style>
+  <br>
+  <br>
+  <br>
+  <div class="div">
+  </div>
+  <div style="text-align: center; padding: 1rem 1rem; color: white">
+  <H1 style="font-size: 5rem; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Doctors At Service</H1>
+  </div>
+  <br>
+  
+ 
+  <br>
+ 
+  <div class="container">
+  <form action="" method="post">
+  {% csrf_token %}
+   <div>
+    <div class="form-group">
+      <label for="doctors"><h5 style="font-size: 30px; color: white; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"><b>Filter By : </b></h5></label>
+      <select id="doctor" name="doctor"   style="width: 13rem; height: 36px;"  aria-placeholder="Choose Category"  required> 
+        <option value="" disabled selected hidden>Doctor Category</option>
+        <option value="all">All</option>
+        <option value="genral-physician">Genral-physician</option>
+        <option value="cardiologist">Cardiologist</option>
+        <option value="dramatologist">Dramatologist</option>
+        <option value="neurologist">Neurologist</option>
+        <option value="physciotherpist">Physciotherpist</option>
+        <option value="dentist">Dentist</option>
+      </select>
+      <button type="submit" class="btn btn-primary">Apply</button>
+    </div>
+  </div>
+  </form>
+    <div class="row ">
+      {%for doctor in context %}
+      <div class="col-md-6 ">
+          <div class="card" style="width:auto" >
+            <div class="card-body" id="card-1">
+              <h5 class="card-title" class="name">{{doctor.name}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted" class="name">{{doctor.category}}</h6>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <address><strong>{{doctor.add}}</strong></address>
+                <h6>{{doctor.email}}</h6>
+                
+              </div>
+              <div class="col-md-6">
+                <h5>Fees:{{doctor.price}}</h5>
+              </div>
+            </div>
+            <div class="button">
+              <a href="{% url 'home:takeappointment' doctor.docid %}" class="btn btn-success" id="button-1">Book An Appointment</a></div>
+            </div>
+            <br>
+      </div>
+      {% endfor %}
+      <br>
+    </div>
+    <br>
+  </div>
+  <br>
+   <br>
+{% endblock body %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Submitted |{% endblock title %}
+
+{% block body %}
+    <style>
+        .img-fluid {
+            width: 200px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+        }    
+    </style>
+    <br>
+    <br>
+    <br>
+    <br>
+
+            <img src="https://img.icons8.com/flat_round/50/000000/checkmark.png" class="img-fluid" >
+        <br>
+        <br>
+            <h2 style="text-align: center; font-style: oblique;"> Thankyou {{ f_name }} {{ l_name }}</h2>
+            <br>
+            <h3 style="text-align: center; font-style: oblique;"> Your Request Has Been <strong>Sucessfully</strong> Submitted  </h3>
+            <br>
+            <h4 style="text-align: center">You have requested for <strong>{{ doc }}</strong> on <strong>{{ day }}</strong> at <strong>{{ timeslot }}</strong>
+            
+            <br>
+            <h5 style=" text-align : center; font-family: sans-serif;"> You will receive an E-mail for the conformation of your Appointment at {{ email }} </h5>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+{% endblock body %}
