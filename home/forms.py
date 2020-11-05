@@ -10,7 +10,7 @@ class Contactform(forms.ModelForm):
         required=True,
         widget=forms.TextInput(
             attrs={
-                "placeholder": "name",
+                "placeholder": "Name",
                 "class": "form-control"
             }
         )

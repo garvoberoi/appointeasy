@@ -17,7 +17,8 @@
     backface-visibility: hidden;
     text-align: center;
     padding: 1rem 1rem;
-    background-color:rgb(228, 255, 255);
+    background-color:oldlace;
+    border-radius: 10%;
   }
 
   .button {
@@ -98,18 +99,22 @@
       <div class="col-md-6 ">
           <div class="card" style="width:auto" >
             <div class="card-body" id="card-1">
-              <h5 class="card-title" class="name">{{doctor.name}}</h5>
+              <h4 class="card-title" class="name">{{doctor.name}}</h4>
               <h6 class="card-subtitle mb-2 text-muted" class="name">{{doctor.category}}</h6>
             </div>
             <div class="row">
               <div class="col-md-6">
-                <address><strong>{{doctor.add}}</strong></address>
-                <h6>{{doctor.email}}</h6>
+                <address><strong><b>Location:</b> {{doctor.add}}</strong></address>
+               
                 
               </div>
               <div class="col-md-6">
-                <h5>Fees:{{doctor.price}}</h5>
+                <h5><b>Fees: </b> {{doctor.price}}</h5>
               </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-12"> <h6><b>Email:</b> {{doctor.email}}</h6></div>
             </div>
             <div class="button">
               <a href="{% url 'home:takeappointment' doctor.docid %}" class="btn btn-success" id="button-1">Book An Appointment</a></div>
@@ -123,4 +128,12 @@
   </div>
   <br>
    <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 {% endblock body %}
