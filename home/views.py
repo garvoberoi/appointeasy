@@ -4,6 +4,7 @@ from datetime import datetime
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .forms import Contactform, Appointform
+from django.core.mail import send_mail
 
 # username-garv pass-garvob5
 
@@ -21,9 +22,17 @@ def takeappointment(request, docid):
             form.save()
             f_name = request.POST['f_name']
             l_name = request.POST['l_name']
-            day = request.POST['day']
+            day = request.POST['day'] 
             timeslot = request.POST['timeslot']
             email = request.POST['email']
+            doctorname = str(form.from_doctor)
+            #sending email
+            send_mail(
+                'Requested Appointment', #subject
+                'You requested for an appointment with ' + doctorname + ' on ' + day + ' at ' + timeslot + '. Thankyou ', #message
+                'garvoberoi1999@gmail.com', #from email
+                [email], #to email
+            )
             return render(request, 'submit.html', {
                 'f_name' : f_name,
                 'l_name' : l_name,

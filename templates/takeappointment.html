@@ -7,8 +7,8 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
         body {
-           /* background-image: url(https://c8.alamy.com/comp/2BB5GM3/doctor-appointment-medical-test-forms-documents-and-medical-masks-surgical-protection-mask-on-blue-background-concept-medicine-health-care-2BB5GM3.jpg);*/
-           background-image: url(https://stormotion.io/blog/content/images/2017/07/doctor-appointment-app-cover-1.jpg);
+           /* background-image: url(/static/take/app.jpg);*/
+           background-image: url(/static/take/app.jpg);
             width: auto;
             height: auto;
             background-repeat: no-repeat;
@@ -113,15 +113,15 @@
             <div class="form-row">
                 <div class="col-4">
                     <label for="day"><b>Name:</b></label>
-                    {{doctor.name}}
+                    <b><strong>{{doctor.name}}</strong></b>
                 </div>
                 <div class="col-4">
                     <label for="time"><b>Address:</b></label>
-                    {{doctor.add}}
+                    <b><strong>{{doctor.add}}</strong></b>
                 </div>
                   <div class="col-4">
                     <label for="time"><b>Fees:</b></label>
-                    {{doctor.price}}
+                    <b><strong>{{doctor.price}}</strong></b>
                 </div>
             </div>
             <br>
