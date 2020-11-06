@@ -1,0 +1,1 @@
+web: gunicorn easyappointment.wsgi --log-file-
