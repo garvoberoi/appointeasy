@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from phone_field import PhoneField
 # Create your models here.
 
 doc_cat = (
@@ -13,7 +14,7 @@ doc_cat = (
 class Doctor(models.Model):
     docid = models.IntegerField(null=True, default=1001)
     name = models.CharField(max_length=40)
-    phone = models.IntegerField()
+    phone = PhoneField(blank=True)
     add = models.TextField()
     email = models.EmailField()
     category = models.CharField(choices=doc_cat,max_length=20)
@@ -25,8 +26,8 @@ class Doctor(models.Model):
 class Appoint(models.Model):
     f_name = models.CharField(max_length=12)
     l_name = models.CharField(max_length=12)
-    phone1 = models.IntegerField()
-    phone2 = models.IntegerField()
+    phone1 = PhoneField(blank=True)
+    phone2 = PhoneField(blank=True)
     add = models.CharField(max_length=100)
     city = models.CharField(max_length=20)
     state = models.CharField(max_length=30)
@@ -43,7 +44,7 @@ class Appoint(models.Model):
     
 class Contact(models.Model):
     name = models.CharField(max_length=40)
-    phone = models.IntegerField()
+    phone = PhoneField(blank=True)
     mess = models.TextField()
     email = models.EmailField()
     date = models.DateField(auto_now=True)
