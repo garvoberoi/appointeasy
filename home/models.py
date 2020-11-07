@@ -27,7 +27,7 @@ class Appoint(models.Model):
     f_name = models.CharField(max_length=12)
     l_name = models.CharField(max_length=12)
     phone1 = models.BigIntegerField()
-    phone2 = models.BigIntegerField()
+    phone2 = models.BigIntegerField(blank=True, null=True)
     add = models.CharField(max_length=100)
     city = models.CharField(max_length=20)
     state = models.CharField(max_length=30)
