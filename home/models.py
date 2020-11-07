@@ -14,7 +14,7 @@ doc_cat = (
 class Doctor(models.Model):
     docid = models.IntegerField(null=True, default=1001)
     name = models.CharField(max_length=40)
-    phone = PhoneField(blank=True)
+    phone = models.BigIntegerField()
     add = models.TextField()
     email = models.EmailField()
     category = models.CharField(choices=doc_cat,max_length=20)
@@ -26,8 +26,8 @@ class Doctor(models.Model):
 class Appoint(models.Model):
     f_name = models.CharField(max_length=12)
     l_name = models.CharField(max_length=12)
-    phone1 = PhoneField(blank=True)
-    phone2 = PhoneField(blank=True)
+    phone1 = models.BigIntegerField()
+    phone2 = models.BigIntegerField()
     add = models.CharField(max_length=100)
     city = models.CharField(max_length=20)
     state = models.CharField(max_length=30)
@@ -44,7 +44,7 @@ class Appoint(models.Model):
     
 class Contact(models.Model):
     name = models.CharField(max_length=40)
-    phone = PhoneField(blank=True)
+    phone = models.BigIntegerField()
     mess = models.TextField()
     email = models.EmailField()
     date = models.DateField(auto_now=True)
