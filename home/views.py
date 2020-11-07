@@ -39,6 +39,7 @@ def takeappointment(request, docid):
                 'day' : day,
                 'timeslot' : timeslot,
                 'email' : email,
+                'doctorname' : doctorname,
                 })   
     form = Appointform(from_doctor=doctor)
     return render(request, 'takeappointment.html', {'form': form, 'doctor': doctor})
