@@ -102,10 +102,10 @@ class Appointform(forms.ModelForm):
     )
     phone2 = forms.IntegerField(
         label='',
-        required=False,
+        required=True,
         widget=forms.NumberInput(
             attrs={
-                "placeholder": "Phone 2(Optional)",
+                "placeholder": "Phone 2",
                 "class": "form-control"
             }
         )
